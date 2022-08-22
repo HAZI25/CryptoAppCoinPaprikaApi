@@ -9,7 +9,11 @@
         android:id="@+id/coinDetailsFragment"
         android:name="com.example.cryptoapppaprikaapi.presentation.coin_details.CoinDetailsFragment"
         android:label="fragment_coin_details"
-        tools:layout="@layout/fragment_coin_details" />
+        tools:layout="@layout/fragment_coin_details" >
+        <argument
+            android:name="coinId"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/coinListFragment"
         android:name="com.example.cryptoapppaprikaapi.presentation.coin_list.CoinListFragment"

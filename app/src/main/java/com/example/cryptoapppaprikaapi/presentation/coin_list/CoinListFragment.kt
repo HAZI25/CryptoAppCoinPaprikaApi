@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.cryptoapppaprikaapi.CryptocurrencyApp
 import com.example.cryptoapppaprikaapi.databinding.FragmentCoinListBinding
 import com.example.cryptoapppaprikaapi.presentation.CoinViewModel
@@ -47,6 +48,15 @@ class CoinListFragment : Fragment() {
         loadCoins()
         setupRecyclerView()
         observeViewModel()
+        setupCoinClickListener()
+    }
+
+    private fun setupCoinClickListener() {
+        coinAdapter.onCoinClickListener = {
+            findNavController().navigate(
+                CoinListFragmentDirections.actionCoinListFragmentToCoinDetailsFragment(it)
+            )
+        }
     }
 
     private fun observeViewModel() {

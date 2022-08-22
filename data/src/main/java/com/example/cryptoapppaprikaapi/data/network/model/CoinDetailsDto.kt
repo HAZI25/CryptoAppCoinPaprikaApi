@@ -19,5 +19,5 @@ class CoinDetailsDto(
     @SerializedName("symbol")
     val symbol: String,
     @SerializedName("team")
-    val team: List<TeamDto>,
+    val team: List<TeamMemberDto>,
 )

@@ -35,10 +35,17 @@ class CoinListAdapter : RecyclerView.Adapter<CoinListViewHolder>() {
             } else {
                 tvIsNew.visibility = View.GONE
             }
+            root.setOnClickListener {
+                onCoinClickListener?.let {
+                    it(coin.id)
+                }
+            }
         }
     }
 
     override fun getItemCount(): Int {
         return differ.currentList.size
     }
+
+    var onCoinClickListener: ((String) -> Unit)? = null
 }

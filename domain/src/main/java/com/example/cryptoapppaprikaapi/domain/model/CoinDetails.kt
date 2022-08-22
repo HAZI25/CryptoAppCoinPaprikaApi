@@ -8,5 +8,5 @@ data class CoinDetails(
     val isNew: Boolean,
     val name: String,
     val symbol: String,
-    val team: List<Team>
+    val team: List<TeamMember>
 )

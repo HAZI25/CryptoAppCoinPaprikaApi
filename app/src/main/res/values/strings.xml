@@ -2,4 +2,7 @@
     <string name="app_name">CryptoAppPaprikaApi</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="team_members">Team members:</string>
+    <string name="no_description">No description for this coin.</string>
+    <string name="no_team_members">No info about team members.</string>
 </resources>

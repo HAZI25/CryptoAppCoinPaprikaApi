@@ -2,10 +2,10 @@ package com.example.cryptoapppaprikaapi.data.network
 
 import com.example.cryptoapppaprikaapi.data.network.model.CoinDetailsDto
 import com.example.cryptoapppaprikaapi.data.network.model.CoinDto
-import com.example.cryptoapppaprikaapi.data.network.model.TeamDto
+import com.example.cryptoapppaprikaapi.data.network.model.TeamMemberDto
 import com.example.cryptoapppaprikaapi.domain.model.Coin
 import com.example.cryptoapppaprikaapi.domain.model.CoinDetails
-import com.example.cryptoapppaprikaapi.domain.model.Team
+import com.example.cryptoapppaprikaapi.domain.model.TeamMember
 import javax.inject.Inject
 
 class CoinMapper @Inject constructor() {
@@ -29,9 +29,9 @@ class CoinMapper @Inject constructor() {
         }
     }
 
-    private fun mapTeamDtoToEntity(dto: TeamDto): Team {
+    private fun mapTeamDtoToEntity(dto: TeamMemberDto): TeamMember {
         return with(dto) {
-            Team(id, name, position)
+            TeamMember(id, name, position)
         }
     }
 }
