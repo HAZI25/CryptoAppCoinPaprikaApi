@@ -7,6 +7,6 @@ import com.example.cryptoapppaprikaapi.di.DaggerApplicationComponent
 class CryptocurrencyApp : Application() {
 
     val component: ApplicationComponent by lazy {
-        DaggerApplicationComponent.create()
+        DaggerApplicationComponent.factory().create(this)
     }
 }

@@ -1,5 +1,6 @@
-package com.example.cryptoapppaprikaapi.data.network
+package com.example.cryptoapppaprikaapi.data.mapper
 
+import com.example.cryptoapppaprikaapi.data.database.model.CoinDbModel
 import com.example.cryptoapppaprikaapi.data.network.model.CoinDetailsDto
 import com.example.cryptoapppaprikaapi.data.network.model.CoinDto
 import com.example.cryptoapppaprikaapi.data.network.model.TeamMemberDto
@@ -13,6 +14,22 @@ class CoinMapper @Inject constructor() {
     fun mapCoinDtoToEntity(dto: CoinDto): Coin {
         return with(dto) {
             Coin(id, isActive, isNew, rank, name, symbol)
+        }
+    }
+
+    fun mapDbModelToEntity(dbModel: CoinDbModel): Coin {
+        return with(dbModel) {
+            Coin(
+                id, isActive, isNew, rank, name, symbol
+            )
+        }
+    }
+
+    fun mapDtoToDbModel(dto: CoinDto): CoinDbModel {
+        return with(dto) {
+            CoinDbModel(
+                id, isActive, isNew, rank, name, symbol
+            )
         }
     }
 

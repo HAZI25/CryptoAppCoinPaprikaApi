@@ -1,6 +1,9 @@
 package com.example.cryptoapppaprikaapi.di
 
+import android.app.Application
 import com.example.cryptoapppaprikaapi.common.Constants.BASE_URL
+import com.example.cryptoapppaprikaapi.data.database.AppDatabase
+import com.example.cryptoapppaprikaapi.data.database.CoinDao
 import com.example.cryptoapppaprikaapi.data.network.CoinService
 import com.example.cryptoapppaprikaapi.data.repository.CoinRepositoryImpl
 import com.example.cryptoapppaprikaapi.domain.repository.CoinRepository
@@ -26,6 +29,12 @@ interface DataModule {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(CoinService::class.java)
+        }
+
+        @Provides
+        @ApplicationScope
+        fun provideCoinDao(application: Application): CoinDao {
+            return AppDatabase.getInstance(application).coinDao()
         }
     }
 }
